@@ -73,6 +73,28 @@ To make Homebridge aware of the new plugin, you will have to add it to your conf
       "shutdownCommand": "net rpc shutdown --ipaddress 192.168.1.151 --user username%password"
     },
     {
+      "name": "Windows10runningSleepOnLAN",
+      "ip": "desktop-homelab.local",
+      "pingInterval": 2,
+      "pingsToChange": 5,
+      "pingTimeout": 1,
+      "pingCommand": "curl desktop-homelab.local:7760/test -m 2",
+      "pingCommandTimeout": 0,
+      "mac": "XX:XX:XX:XX:XX:XX",
+      "broadcastAddress": "192.168.1.255",
+      "startCommandTimeout": 0,
+      "wakeGraceTime": 5,
+      "wakeCommandTimeout": 0,
+      "shutdownCommand": "curl desktop-homelab.local:7760/suspend -m 2",
+      "shutdownGraceTime": 15,
+      "shutdownCommandTimeout": 0,
+      "log": true,
+      "logPinger": false,
+      "debugLog": false,
+      "returnEarly": true,
+      "accessory": "NetworkDevice"
+    },
+    {
       "accessory": "NetworkDevice",
       "name": "Raspberry Pi",
       "mac": "<mac-address>",
